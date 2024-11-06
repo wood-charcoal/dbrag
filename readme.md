@@ -38,6 +38,9 @@
 
 8. 提交给 LLM 生成回答 Answer
 
+具体项目结构如下图所示：
+[![pAypn9x.jpg](https://s21.ax1x.com/2024/11/06/pAypn9x.jpg)](https://imgse.com/i/pAypn9x)
+
 #### 1.3 项目运行
 
 - 在.env 文件中配置环境变量
