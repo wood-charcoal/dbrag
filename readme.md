@@ -55,3 +55,6 @@ python api.py
 cd llm-universe/project/serve
 python run_gradio.py -model_name='glm-4' -embedding_model='zhipuai' -db_path='../data_base/knowledge_db' -persist_path='../vector_db/chroma'
 ```
+
+#### Acknowledgement
+特别感谢 https://github.com/logan-zou/Chat_with_Datawhale_langchain 项目提供的灵感和支持。该项目为本项目的开发提供了宝贵的参考和帮助。
