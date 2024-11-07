@@ -1,15 +1,15 @@
+import tempfile
+from dotenv import load_dotenv, find_dotenv
+from embedding.call_embedding import get_embedding
+from langchain_community.document_loaders import UnstructuredFileLoader
+from langchain_community.document_loaders import UnstructuredMarkdownLoader
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_community.document_loaders import PyMuPDFLoader
+from langchain_community.vectorstores import Chroma
 import os
 import sys
 import re
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
-from langchain_community.vectorstores import Chroma
-from langchain_community.document_loaders import PyMuPDFLoader
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain_community.document_loaders import UnstructuredMarkdownLoader
-from langchain_community.document_loaders import UnstructuredFileLoader
-from embedding.call_embedding import get_embedding
-from dotenv import load_dotenv, find_dotenv
-import tempfile
 
 # 首先实现基本配置
 
@@ -44,10 +44,12 @@ def file_loader(file, loaders):
     return
 
 
-def create_db_info(files=DEFAULT_DB_PATH, embeddings="openai", persist_directory=DEFAULT_PERSIST_PATH):
+def create_db_info(files=DEFAULT_DB_PATH, embeddings="zhipuai", persist_directory=DEFAULT_PERSIST_PATH):
+    if files == None:
+        vectordb = create_db(embeddings=embeddings)
     if embeddings == 'openai' or embeddings == 'm3e' or embeddings == 'zhipuai':
         vectordb = create_db(files, persist_directory, embeddings)
-    return ""
+    return f"{files} create success"
 
 
 def create_db(files=DEFAULT_DB_PATH, persist_directory=DEFAULT_PERSIST_PATH, embeddings="openai"):

@@ -56,7 +56,7 @@ python api.py
 
 ```shell
 cd llm-universe/project/serve
-python run_gradio.py -model_name='glm-4' -embedding_model='zhipuai' -db_path='../data_base/knowledge_db' -persist_path='../vector_db/chroma'
+python run_gradio.py 
 ```
 
 #### Acknowledgement
