@@ -1,0 +1,21 @@
+# IDE
+.idea
+.vscode
+
+# python cache
+chain/__pycache__/
+database/__pycache__/
+embedding/__pycache__/
+llm/__pycache__/
+
+# raw database
+database/knowledge_db/*
+
+# vector database
+vector_db/*
+
+# env variables
+.env
+
+# Mac file that stores custom attributes of its containing folder
+.DS_Store
